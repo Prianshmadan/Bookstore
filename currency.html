@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        input[type="button"] {
+
+            border-color: whitesmoke;
+            background-color: #6b82a8;
+            color: black;
+            width: 100%;
+        }
+
+        input[type="button"]:hover {
+            background-color: #91b3bc;
+        }
+
+        input[type="text"] {
+            border-radius: 10px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            font-family: Gotham Rounded, sans-serif;
+            font-weight: normal;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background: linear-gradient(to right, rgb(181, 164, 223), #91b3bc, #6b82a8);
+        }
+    </style>
+    <script>
+        function clr() {
+            document.getElementById("box").value = "";
+        }
+
+
+
+        function calculate(val) {
+            var x = document.getElementById("rbox").value;
+            if (val == 1) {
+                document.getElementById("dbox").value = x * 73.0837;
+            }
+            else if (val == 2) {
+                document.getElementById("ebox").value = x * 22.9591;
+            } else if (val == 3) {
+                document.getElementById("pbox").value = x * 99.931;
+            } else {
+                document.getElementById("fbox").value = x * 1.0101;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <center>
+        
+            <H1>Currency conveter</H1>
+            <div style="background-color:#292929;width: 400px;height: 500px;">
+                <br>
+                <br>
+                <br>
+                <br> 
+            <table>
+                <tr>
+                    <td>
+                        <input type="button" value="&#8377" onclick="clr()"
+                            style="padding-left:20px;padding-right:20px" />
+                    </td>
+                    <td colspan="3"><input type="text" id="rbox" placeholder="value.." /></td>
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <span>
+                            <img src="https://cdn.shopify.com/s/files/1/2078/5043/t/59/assets/USD.png?13296612461826194053"
+                                id="flags">
+                        </span>
+                        <input type="button" value="&#36" onclick="calculate('1')"
+                            style="padding-left:20px;padding-right:20px" />
+                    </td>
+                    <td colspan="3"><input type="text" id="dbox" placeholder="value.." /></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span>
+                            <img src="https://cdn.shopify.com/s/files/1/2078/5043/t/59/assets/ILS.png?11949257934149418133"
+                                id="flags">
+                        </span>
+                        <input type="button" value="&#128" onclick="calculate('2')"
+                            style="padding-left:20px;padding-right:20px" />
+                    </td>
+                    <td colspan="3"><input type="text" id="ebox" placeholder="value.." /></td>
+                </tr>
+                <tr>
+                    <td> <span>
+                            <img src="https://cdn.shopify.com/s/files/1/2078/5043/t/59/assets/GBP.png?11949257934149418133"
+                                id="flags">
+                        </span><input type="button" value="&#162" onclick="calculate('3')"
+                            style="padding-left:20px;padding-right:20px" /></td>
+                    <td colspan="3"><input type="text" id="pbox" placeholder="value.." /></td>
+                </tr>
+
+                <tr>
+                    <td> <span>
+                            <img src="https://cdn.shopify.com/s/files/1/2078/5043/t/59/assets/RUB.png?11949257934149418133"
+                                id="flags">
+                        </span><input type="button" value="&#8355" onclick="calculate('5')"
+                            style="padding-left:20px;padding-right:20px" /></td>
+                    <td colspan="3"><input type="text" id="fbox" placeholder="value.." /></td>
+                </tr>
+
+            </table>
+        </div>
+    </center>
+
+
+</body>
+
+</html>

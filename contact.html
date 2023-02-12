@@ -1,0 +1,158 @@
+<html>
+
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+      background: -webkit-linear-gradient(right, #a445b2, #fa4299, #a445b2, #fa4299);
+    }
+
+    .wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 350px;
+      width: 100%;
+      background: #fff;
+      padding: 25px;
+      border-radius: 5px;
+      box-shadow: 4px 4px 2px rgba(254, 236, 164, 1);
+    }
+
+    .wrapper h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #332902;
+    }
+
+    .wrapper .input_field {
+      margin-bottom: 10px;
+    }
+
+    .wrapper .input_field input[type="text"],
+    .wrapper textarea {
+      border: 1px solid #e0e0e0;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .wrapper textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    .wrapper .btn input[type="submit"] {
+      border: 0px;
+      margin-top: 15px;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      background: -webkit-linear-gradient(right, #a445b2, #fa4299, #a445b2, #fa4299);
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #error_message {
+      margin-bottom: 20px;
+      background: #fe8b8e;
+      padding: 0px;
+      text-align: center;
+      font-size: 14px;
+      transition: all 0.5s ease;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <form onsubmit="return validate()" action="mailto:priansh.madan@gmail.com?subject=Userdata" method="POST"
+      enctype="text/plain">
+
+      <div class="wrapper">
+        <h2>Contact us</h2>
+        <div id="error_message">
+
+        </div>
+
+        <div class="input_field">
+          <input type="text" placeholder="Name" id="name" name="name">
+        </div>
+        <div class="input_field">
+          <input type="text" placeholder="subjects" id="sub" name="sub">
+        </div>
+        <div class="input_field">
+          <input type="text" pattern="^([+]91 - )[7-9]{1}[0-9]{9}" value="+91 - " style="font-size: 20px" name="phone"
+            id="phone" size="16" maxlength="16" placeholder="Phone" id="phone">
+        </div>
+
+        <div class="input_field">
+          <textarea placeholder="Message" id="message"></textarea>
+        </div>
+        <div class="btn">
+          <input type="submit">
+        </div>
+    </form>
+  </div>
+
+  </form>
+  </div>
+  <script>
+    function validate() {
+
+      {
+        var n = document.getElementById("name");
+
+        var a = document.getelementbyId("sub");
+        var p = document.getElementById("phone");
+        
+
+        var patt_name = /^[A-Z][a-z]+[^0-9]/;
+        var patt_sub =/^[A-Z][a-z]+[^0-9]/;
+        var patt_phone = /^([+]91 - )[7-9]{1}/;
+        if (n.value == "") {
+          alert("Please enter first name");
+          return false;
+        }
+        else {
+          if (patt_name.test(n.value)) {
+            if (patt_sub.test(a.value)) {
+              if (patt_mobile.test(m.value))
+              {
+
+                alert("Data Submitted");
+                return true;
+              }
+              else { alert("costumer id should be in the format:- first 2 digit should be alphabets and rest should be numbers"); return false; }
+            }
+            else { alert("Mobile number is not correct."); return false; }
+          }
+          else { alert("Please check name entered."); return false; }
+
+        }
+      }
+
+    }
+
+  </script>
+  </form>
+</body>
+
+</html>

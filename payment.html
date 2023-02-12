@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style2.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    function validate() {
+     
+      var address = document.getElementById("address");
+      var cardname = document.getElementById("cardname");
+      var cardnum = document.getElementById("cardnum");
+      var cvv = document.getElementById("cvv");
+
+
+   
+      var patt_address = /^[A-Za-z0-9\s]+$/;
+      var patt_cardname = /^[A-Z][a-z]+[^0-9]/;       
+      var patt_cardnum =  /^[0-9]{12}/;
+      var patt_cvv=/^[0-9]{3}/;
+     
+      if (address.value == "") {
+        alert("Please enter first name");
+        return false;
+      }
+      else {
+        if (cardname.value == "") { alert("Please enter address"); }
+        else {
+          if (patt_address.test(fn.value)) {
+            if (patt_cardname.test(fn.value)) {
+            if (patt_cardnumber.test(ln.value)) {
+              if (patt_cvv.test(m.value)) {
+                alert("Data Submitted");
+                return true;
+              }
+              else { alert("cvv is not correct."); return false; }
+              
+            }
+            else { alert("check card name entered."); return false; }
+          }
+              else { alert("card number is not correct."); return false; }
+          }
+          else { alert("Please check address entered."); return false; }
+        }
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="wrapper"></div>
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+
+        <form onsubmit="return validate()" action="" method="POST" enctype="text/plain">
+
+
+          <div class="row">
+            <div class="col-50">
+              <h3>Billing Address</h3>
+              <label for="userid"><i class="fa fa-envelope"></i> user id</label>
+              <INPUT type="text" pattern="^(CUSTID-)[a-z]{2}[0-9]{6}$" style="font-size: 20px" name="Customerid"
+                size="15" maxlength="15" value="CUSTID-"></H3>
+
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email" placeholder="john@example.com">
+              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+              <input type="text" id="address" name="address" placeholder="542 W. 15th Street" pattern = /^[A-Za-z0-9\s]+$/    >
+              <label for="city"><i class="fa fa-institution"></i> City</label>
+              <input type="text" id="city" name="city" placeholder="xxx" size="20" maxlength="15">
+
+              <div class="row">
+                <div class="col-50">
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state" placeholder="NY">
+                </div>
+                <div class="col-50">
+                  <label for="zip">Zip</label>
+                  <input type="text" id="zip" name="zip" size="8" maxlength="8" placeholder="10001">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-50">
+              <h3>Payment</h3>
+              <label for="fname">Payment options</label>
+
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-paypal" style="color: #0f12db"></i>
+              </div>
+              <label for="cname">Name on Card</label required>
+              <input type="text" id="cardname" name="cardname" pattern="^[A-Z][a-z]+[^0-9]" placeholder="John More Doe">
+              <label for="ccnum">Credit card number *</label>
+              <input type="text" id="cardnum" name="cardnum"       pattern=" /^[0-9]{12}/" placeholder="1111-2222-3333-4444">
+              <label for="expmonth">Exp Month</label>
+              <input type="text" id="expmonth" name="expmonth"  pattern="^[^0-9]" placeholder="September" size="2" maxlength="2" >
+
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Exp Year</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="2018" size="2" maxlength="2"  >
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV *</label>
+                  <input type="text" id="cvv" name="cvv" placeholder="352" required>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <label>
+            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+          </label>
+          <input type="submit" value="Continue to checkout" class="btn">
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+
+  </form>
+
+  
+</body>
+
+</html>
